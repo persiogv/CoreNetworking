@@ -2,6 +2,10 @@
 
 A very simple **Swift Package** to help networking tasks in Swift.
 
+## Advice
+
+This is a work in progress project. New features are being added. Contributions are welcome!
+
 ## Getting started
 
 1. Add package to your project (Xcode > File > Swift Packages > Add Package Dependency...). Point to branch `master`.
