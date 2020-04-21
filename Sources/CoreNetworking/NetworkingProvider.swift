@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Networking provider
 open class NetworkingProvider {
     
     // MARK: Initializers

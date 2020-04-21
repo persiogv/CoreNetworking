@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An extension to help api requests
 open class ApiProvider: NetworkingProvider {
     
     // MARK: Properties

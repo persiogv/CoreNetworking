@@ -7,16 +7,8 @@
 
 import Foundation
 
-public extension URLRequest {
+extension URLRequest {
     
-    // MARK: Initializers
-    
-    /// Initializer
-    /// - Parameters:
-    ///   - url: Request URL
-    ///   - method: Request method
-    ///   - body: Request body
-    ///   - headers: Request headers
     init(url: URL, method: RequestMethod?, body: Data?, headers: [RequestHeader]?) {
         self.init(url: url)
         self.httpMethod = method?.rawValue
