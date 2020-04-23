@@ -1,6 +1,6 @@
 //
 //  URLRequest.swift
-//  Core
+//  CoreNetworking
 //
 //  Created by Pérsio on 19/04/20.
 //

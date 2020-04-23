@@ -1,14 +1,14 @@
 //
-//  NetworkingProvider.swift
-//  Core
+//  Networker.swift
+//  CoreNetworking
 //
 //  Created by Pérsio on 18/04/20.
 //
 
 import Foundation
 
-/// Networking provider
-open class NetworkingProvider {
+/// Class for networking
+public final class Networker: HTTPRequester {
     
     // MARK: Initializers
     

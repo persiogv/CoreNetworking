@@ -1,25 +1,29 @@
 //
 //  ApiProvider.swift
-//  Core
+//  CoreNetworking
 //
 //  Created by Pérsio on 19/04/20.
 //
 
 import Foundation
 
-/// An extension to help api requests
-open class ApiProvider: NetworkingProvider {
+/// API base provider (WIP)
+open class ApiProvider {
     
     // MARK: Properties
     
     private let baseUrl: String
+    private let requester: HTTPRequester
     
     // MARK: Initializers
     
     /// Initializer
-    /// - Parameter baseUrl: Api base url
-    public init(baseUrl: String) {
+    /// - Parameters:
+    ///   - baseUrl: API base url
+    ///   - requester: An HTTPRequester adopter
+    public init(baseUrl: String, requester: HTTPRequester = Networker()) {
         self.baseUrl = baseUrl
+        self.requester = requester
     }
     
     // MARK: Public methods
@@ -48,7 +52,7 @@ open class ApiProvider: NetworkingProvider {
             return completion(.failure(RequestError.invalidUrl))
         }
         
-        request(url: url, method: .GET, headers: headers, completion: completion)
+        requester.request(url: url, method: .GET, session: .shared, body: nil, headers: headers, completion: completion)
     }
     
     /// POST
@@ -63,6 +67,6 @@ open class ApiProvider: NetworkingProvider {
             return completion(.failure(RequestError.invalidUrl))
         }
         
-        request(url: url, method: .POST, body: body, headers: headers, completion: completion)
+        requester.request(url: url, method: .POST, session: .shared, body: body, headers: headers, completion: completion)
     }
 }
