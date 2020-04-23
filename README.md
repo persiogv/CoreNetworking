@@ -12,7 +12,7 @@ This is a work in progress project. New features are being added. Contributions 
 2. Search for the following url: https://github.com/persiogv/CoreNetworking
 3. Add `import CoreNetworking` in your Swift file
 
-## NetworkingProvider
+## Networker
 
 #### Requests
 
@@ -64,7 +64,7 @@ This is a work in progress project. New features are being added. Contributions 
   public final func download(url: URL, session: URLSession = URLSession.shared, completion: @escaping RequestCompletion)
 ```
 
-## ApiProvider
+## ApiProvider (WIP)
 
 #### GET
 
