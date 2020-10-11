@@ -32,11 +32,10 @@ open class ApiProvider {
     ///
     /// - Parameters:
     ///   - path: The path of the service
-    ///   - body: Optional data to send within the request
     ///   - headers: HTTP headers
     ///   - parameters: Parameters to send within the request
     ///   - completion: Callback completion handler
-    public final func GET(path: String, body: Data? = nil, headers: [RequestHeader], parameters: [RequestParameter], completion: @escaping RequestCompletion) {
+    public final func GET(path: String, headers: [RequestHeader], parameters: [RequestParameter], completion: @escaping RequestCompletion) {
         var components = URLComponents(string: baseUrl.appending(path))
         var queryItems: [URLQueryItem] = []
         
@@ -55,7 +54,7 @@ open class ApiProvider {
             return completion(.failure(RequestError.invalidUrl))
         }
         
-        requester.request(url: url, method: .GET, session: .shared, body: body, headers: headers, completion: completion)
+        requester.request(url: url, method: .GET, session: .shared, body: nil, headers: headers, completion: completion)
     }
     
     /// POST
