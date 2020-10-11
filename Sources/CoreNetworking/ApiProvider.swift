@@ -47,7 +47,9 @@ open class ApiProvider {
             }
         }
         
-        components?.queryItems = queryItems
+        if !queryItems.isEmpty {
+            components?.queryItems = queryItems
+        }
         
         guard let url = components?.url else {
             return completion(.failure(RequestError.invalidUrl))
